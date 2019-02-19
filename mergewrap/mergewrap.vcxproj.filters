@@ -15,18 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\mcmerge.h">
+    <ClInclude Include="..\include\kdvtype.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\libyuv\include\libyuv.h">
+    <ClInclude Include="..\include\mcmerge.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\libyuv\include\libyuv.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\source\mcmerge.cpp">
+    <ClCompile Include="..\source\mcmerge.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\mergertest.cpp">
+    <ClCompile Include="..\source\mergertest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

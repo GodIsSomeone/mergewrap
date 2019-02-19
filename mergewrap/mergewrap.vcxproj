@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\kdvtype.h" />
+    <ClInclude Include="..\include\libyuv\include\libyuv.h" />
+    <ClInclude Include="..\include\mcmerge.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\source\mcmerge.cpp" />
+    <ClCompile Include="..\source\mergertest.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{70E2EB24-1F81-4680-94E5-51AB26133D5E}</ProjectGuid>
@@ -70,7 +79,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>G:\KedaWork\mergewrap\mergewrap\include;G:\KedaWork\mergewrap\mergewrap\include\libyuv\include;$(IncludePath)</IncludePath>
+    <IncludePath>G:\KedaWork\mergewrap\mergewrap\include;G:\KedaWork\mergewrap\mergewrap\libyuv\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -116,14 +125,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\include\libyuv\include\libyuv.h" />
-    <ClInclude Include="..\..\include\mcmerge.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\source\mcmerge.cpp" />
-    <ClCompile Include="..\..\source\mergertest.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

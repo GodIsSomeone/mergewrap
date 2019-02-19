@@ -2660,71 +2660,7 @@ DoGenFocusInfo(PTMcMergeBgParam ptBgParam,
  * */
 s32 McMergeSetParam(void* pvHandler, TMcMergeParam* ptMcMergeParam)
 {
-    s32 nRet = en_MCMERGE_FAIL;
-    PTMcMergeHandler ptHandler = NULL;
-
-    if (NULL == pvHandler) {
-        warning("null pointer of handler");
-        return nRet;
-    }
-
-    if (NULL == ptMcMergeParam) {
-        warning("null pointer of handler");
-        return nRet;
-    }
-
-    do {
-
-        /* input validation */
-        if (ptMcMergeParam->nMaxFgNum <= 0 ||
-            ptMcMergeParam->nMaxFgNum > MCMERGE_CHANNEL_MAX) {
-            warning("invalid nMaxFgNum %d max %d", ptMcMergeParam->nMaxFgNum, MCMERGE_CHANNEL_MAX);
-            break;
-        }
-
-        if (en_MCMERGE_SUCCESS != McMergeCheckMergeStyle(ptMcMergeParam->nMergeStyle)) {
-            break;
-        }
-
-        const TMcMergeBgParam *ptBgParam = &ptMcMergeParam->tMcMergeBgPic;
-        if (en_MCMERGE_SUCCESS !=
-            McMergeCheckBgSize(ptBgParam->nBgWidth, ptBgParam->nBgHeight)) {
-            break;
-        }
-
-        ptHandler = (PTMcMergeHandler)pvHandler;
-        /* copy value to compare when set param interface called */
-        McMergeStyle2MergeWinNumber(ptMcMergeParam->nMergeStyle, ptHandler->nSubWinNum);
-        if (ptHandler->nSubWinNum > ptMcMergeParam->nMaxFgNum)
-        {
-            warning("conflict param mergetype %d nMaxFgNum %d\n",
-                ptMcMergeParam->nMergeStyle, ptMcMergeParam->nMaxFgNum);
-            nRet = en_MCMERGE_INVALID_PARAM;
-            break;
-        }
-        McMergeCopyMergeParam(&ptHandler->tMcMergeParam, ptMcMergeParam);
-
-        /* generate background color YUV */
-        McMergeGenBgColor(ptHandler);
-
-        /* caculate the postion for merge */
-        nRet = CaculateSubwinPosition(ptHandler);
-        nRet = CaculateExtrawinPosition(ptHandler);
-
-        /* generate border information */
-        nRet = CaculateBorderPosition(ptHandler);
-        McMergeGenBorderColor(ptHandler);
-
-        /* generate focus information */
-        nRet = GenFocusInfo(ptHandler);
-
-        if (en_MCMERGE_SUCCESS == nRet) {
-            bIsSuccss = TRUE;
-            //sdfsdfsdfsdf;
-
-    } while (0);
-
-    return nRet;
+    return en_MCMERGE_SUCCESS;
 }
 
 /* Description:
